@@ -19,8 +19,11 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameObject kitAnswer2;
 
+    [SerializeField]
+    private GameObject finalScreen;
 
-    
+    [SerializeField]
+    private GameObject tutorialScreen;
 
     [SerializeField]
     private GameObject Adelaide;
@@ -53,10 +56,14 @@ public class GameController : MonoBehaviour
     }
 
 
-    private void Start()
+    public void CloseTutoAndStart()
     {
+        tutorialScreen.SetActive(false);
         StartTurn();
+
     }
+
+
 
 
 
@@ -164,24 +171,27 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.Log("fim do jogo");
+            StartCoroutine(FinalAnimation());
         }
     }
 
 
+    IEnumerator FinalAnimation()
+    {
+
+        
+        scenaryAnim.SetTrigger("finish");
+
+        yield return new WaitForSeconds(1.6f);
+
+        adelaideAnim.SetTrigger("arrived");
 
 
+        yield return new WaitForSeconds(3f);
 
-
-
-
-
-
-
-
-
-
-
+        finalScreen.SetActive(true);
+        Debug.Log(QuantPlays);
+    }
 
 
 
