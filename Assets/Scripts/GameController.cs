@@ -72,14 +72,14 @@ public class GameController : MonoBehaviour
     {
         words[currentWord].SetActive(true);
 
-        if(words[currentWord].GetComponent<WordClass>().CorrectID == 1 || words[currentWord].GetComponent<WordClass>().CorrectID == 2) //SELECIONA E ATIVA O KIT DE RESPOSTAS
-        {
+        //if(words[currentWord].GetComponent<WordClass>().CorrectID == 1 || words[currentWord].GetComponent<WordClass>().CorrectID == 2) //SELECIONA E ATIVA O KIT DE RESPOSTAS
+        //{
             kitAnswer1.SetActive(true);
-        }
-        else
-        {
-            kitAnswer2.SetActive(true);
-        }
+        //}
+       // else
+        //{
+          //  kitAnswer2.SetActive(true);
+        //}
     }
 
     //VERIFICA A RESPOSTA
@@ -109,14 +109,14 @@ public class GameController : MonoBehaviour
     IEnumerator WrongAnswer()
     {
 
-        if (words[currentWord].GetComponent<WordClass>().CorrectID == 1 || words[currentWord].GetComponent<WordClass>().CorrectID == 2) //SELECIONA E DESATIVA O KIT DE RESPOSTAS
-        {
+        //if (words[currentWord].GetComponent<WordClass>().CorrectID == 1 || words[currentWord].GetComponent<WordClass>().CorrectID == 2) //SELECIONA E DESATIVA O KIT DE RESPOSTAS
+        //{
             kitAnswer1.SetActive(false);
-        }
-        else
-        {
-            kitAnswer2.SetActive(false);
-        }
+       // }
+       // else
+       // {
+        //    kitAnswer2.SetActive(false);
+       // }
 
 
         adelaideSom.Play();
@@ -131,14 +131,14 @@ public class GameController : MonoBehaviour
     IEnumerator CorrectAnswer()
     {
 
-        if (words[currentWord].GetComponent<WordClass>().CorrectID == 1 || words[currentWord].GetComponent<WordClass>().CorrectID == 2) //SELECIONA E DESATIVA O KIT DE RESPOSTAS
-        {
+       // if (words[currentWord].GetComponent<WordClass>().CorrectID == 1 || words[currentWord].GetComponent<WordClass>().CorrectID == 2) //SELECIONA E DESATIVA O KIT DE RESPOSTAS
+        //{
             kitAnswer1.SetActive(false);
-        }
-        else
-        {
-            kitAnswer2.SetActive(false);
-        }
+       // }
+       // else
+       // {
+       //     kitAnswer2.SetActive(false);
+       // }
 
         words[currentWord].GetComponent<WordClass>().EditWord();
 
